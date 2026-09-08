@@ -1,10 +1,12 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 export interface User {
-  id: str;
-  username: str;
-  email: str;
+  id: string;
+  username: string;
+  email: string;
   role: 'USER' | 'ADMIN' | string;
+  current_role_id?: string | null;
+  target_role_id?: string | null;
   created_at?: string;
   last_login?: string;
 }
@@ -17,6 +19,7 @@ interface AuthContextType {
   login: (emailOrUsername: string, password: string) => Promise<boolean>;
   register: (username: string, email: string, password: string, passwordConfirm: string) => Promise<boolean>;
   logout: () => void;
+  updateUser: (updatedUser: User) => void;
   isAuthenticated: boolean;
   isAdmin: boolean;
   clearError: () => void;
@@ -118,6 +121,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     localStorage.removeItem('user');
   };
 
+  const updateUser = (updatedUser: User) => {
+    setUser(updatedUser);
+    localStorage.setItem('user', JSON.stringify(updatedUser));
+  };
+
   const clearError = () => setError(null);
 
   return (
@@ -129,6 +137,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       login,
       register,
       logout,
+      updateUser,
       isAuthenticated: !!token && !!user,
       isAdmin: !!user && user.role === 'ADMIN',
       clearError

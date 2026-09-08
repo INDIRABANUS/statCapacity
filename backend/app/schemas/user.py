@@ -18,11 +18,17 @@ class UserLogin(BaseModel):
     email_or_username: str = Field(..., min_length=3)
     password: str = Field(..., min_length=1)
 
+class UserProfileUpdate(BaseModel):
+    current_role_id: Optional[str] = None
+    target_role_id: Optional[str] = None
+
 class UserResponse(BaseModel):
     id: str
     username: str
     email: str
     role: str
+    current_role_id: Optional[str] = None
+    target_role_id: Optional[str] = None
     created_at: Optional[str] = None
     updated_at: Optional[str] = None
     last_login: Optional[str] = None
