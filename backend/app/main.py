@@ -6,6 +6,7 @@ from fastapi.responses import JSONResponse
 from app.core.config import settings
 from app.db.mongodb import connect_to_mongo, close_mongo_connection, get_database
 from app.db.users_db import ensure_user_indexes
+from app.db.user_competencies_db import ensure_user_competency_indexes
 from app.api.v1.router import api_router
 from app.api.v1.endpoints.health import health_check
 
@@ -15,6 +16,7 @@ async def lifespan(app: FastAPI):
     db = get_database()
     try:
         ensure_user_indexes(db)
+        ensure_user_competency_indexes(db)
     except Exception:
         pass
     yield

@@ -34,11 +34,23 @@ patcher_mongodb = mock.patch("app.db.mongodb.get_database", side_effect=_get_moc
 patcher_auth = mock.patch("app.api.v1.endpoints.auth.get_database", side_effect=_get_mock_db)
 patcher_deps = mock.patch("app.api.deps.get_database", side_effect=_get_mock_db)
 patcher_users = mock.patch("app.db.users_db.get_database", side_effect=_get_mock_db)
+patcher_roles = mock.patch("app.api.v1.endpoints.roles.get_database", side_effect=_get_mock_db)
+patcher_users_ep = mock.patch("app.api.v1.endpoints.users.get_database", side_effect=_get_mock_db)
+patcher_roles_db = mock.patch("app.db.roles_db.get_database", side_effect=_get_mock_db)
+patcher_comp_ep = mock.patch("app.api.v1.endpoints.competencies.get_database", side_effect=_get_mock_db)
+patcher_comp_db = mock.patch("app.db.competencies_db.get_database", side_effect=_get_mock_db)
+patcher_ucomp_db = mock.patch("app.db.user_competencies_db.get_database", side_effect=_get_mock_db)
 
 patcher_mongodb.start()
 patcher_auth.start()
 patcher_deps.start()
 patcher_users.start()
+patcher_roles.start()
+patcher_users_ep.start()
+patcher_roles_db.start()
+patcher_comp_ep.start()
+patcher_comp_db.start()
+patcher_ucomp_db.start()
 
 # Now import the app (after patches are active)
 from fastapi.testclient import TestClient
@@ -281,16 +293,306 @@ def run_auth_test_suite():
         print(f"   {FAIL} {e}")
         failed += 1
 
+    # ----------------------------------------------------------------
+    # Test 13: GET /api/v1/roles
+    # ----------------------------------------------------------------
+    print("\n13. GET /api/v1/roles (Available Roles Catalog)...")
+    try:
+        res = client.get("/api/v1/roles")
+        assert res.status_code == 200, f"Expected 200, got {res.status_code}: {res.text}"
+        roles_data = res.json()
+        assert isinstance(roles_data, list), "Roles should be a list"
+        assert len(roles_data) >= 10, f"Expected at least 10 roles, got {len(roles_data)}"
+        assert any(r["role_id"] == "ROLE_STAT_OFFICER" for r in roles_data)
+        print(f"   {PASS} /roles returned {len(roles_data)} available statistical roles")
+        passed += 1
+    except AssertionError as e:
+        print(f"   {FAIL} {e}")
+        failed += 1
+
+    # ----------------------------------------------------------------
+    # Test 14: PUT /api/v1/users/me/profile (Valid Role Assignment)
+    # ----------------------------------------------------------------
+    print("\n14. PUT /api/v1/users/me/profile with Valid Role IDs...")
+    try:
+        assert user_token, "No user_token available"
+        headers = {"Authorization": f"Bearer {user_token}"}
+        res = client.put("/api/v1/users/me/profile", headers=headers, json={
+            "current_role_id": "ROLE_STAT_OFFICER",
+            "target_role_id": "ROLE_SR_STAT_ANALYST"
+        })
+        assert res.status_code == 200, f"Expected 200, got {res.status_code}: {res.text}"
+        data = res.json()
+        assert data["current_role_id"] == "ROLE_STAT_OFFICER"
+        assert data["target_role_id"] == "ROLE_SR_STAT_ANALYST"
+        print(f"   {PASS} Profile updated with current and target roles (200)")
+        passed += 1
+    except AssertionError as e:
+        print(f"   {FAIL} {e}")
+        failed += 1
+
+    # ----------------------------------------------------------------
+    # Test 15: PUT /api/v1/users/me/profile with Invalid Role ID (Expect 400)
+    # ----------------------------------------------------------------
+    print("\n15. PUT /api/v1/users/me/profile with Nonexistent Role ID (expect 400)...")
+    try:
+        assert user_token, "No user_token available"
+        headers = {"Authorization": f"Bearer {user_token}"}
+        res = client.put("/api/v1/users/me/profile", headers=headers, json={
+            "current_role_id": "INVALID_FAKE_ROLE_999",
+            "target_role_id": "ROLE_SR_STAT_ANALYST"
+        })
+        assert res.status_code == 400, f"Expected 400, got {res.status_code}: {res.text}"
+        print(f"   {PASS} Invalid role ID rejected with 400 Bad Request")
+        passed += 1
+    except AssertionError as e:
+        print(f"   {FAIL} {e}")
+        failed += 1
+
+    # ----------------------------------------------------------------
+    # Test 16: PUT /api/v1/users/me/profile Without Token (Expect 401)
+    # ----------------------------------------------------------------
+    print("\n16. PUT /api/v1/users/me/profile Without Token (expect 401)...")
+    try:
+        res = client.put("/api/v1/users/me/profile", json={
+            "current_role_id": "ROLE_STAT_OFFICER"
+        })
+        assert res.status_code == 401, f"Expected 401, got {res.status_code}: {res.text}"
+        print(f"   {PASS} Unauthenticated profile update rejected with 401")
+        passed += 1
+    except AssertionError as e:
+        print(f"   {FAIL} {e}")
+        failed += 1
+
+    # ================================================================
+    # STAGE 3 TESTS: COMPETENCY & SKILL-GAP ENGINE
+    # ================================================================
+
+    # ----------------------------------------------------------------
+    # Test 17: GET /api/v1/competencies (Competency Retrieval)
+    # ----------------------------------------------------------------
+    print("\n17. GET /api/v1/competencies (Taxonomy Retrieval)...")
+    try:
+        res = client.get("/api/v1/competencies")
+        assert res.status_code == 200, f"Expected 200, got {res.status_code}: {res.text}"
+        comps = res.json()
+        assert isinstance(comps, list), "Expected list of competencies"
+        assert len(comps) == 18, f"Expected 18 competencies, got {len(comps)}"
+        assert any(c["competency_id"] == "COMP_SAMPLING_METHODOLOGY" for c in comps)
+        print(f"   {PASS} Successfully retrieved all {len(comps)} competencies from framework")
+        passed += 1
+    except AssertionError as e:
+        print(f"   {FAIL} {e}")
+        failed += 1
+
+    # ----------------------------------------------------------------
+    # Test 18: PUT /api/v1/users/me/competencies (Authenticated Update)
+    # ----------------------------------------------------------------
+    print("\n18. PUT /api/v1/users/me/competencies (Save Assessed Levels)...")
+    try:
+        assert user_token, "No user_token available"
+        headers = {"Authorization": f"Bearer {user_token}"}
+        payload = {
+            "competencies": [
+                {"competency_id": "COMP_SAMPLING_METHODOLOGY", "current_level": 45},
+                {"competency_id": "COMP_SURVEY_FIELD_OPERATIONS", "current_level": 50},
+                {"competency_id": "COMP_DATA_CLEANING_VALIDATION", "current_level": 70}
+            ]
+        }
+        res = client.put("/api/v1/users/me/competencies", headers=headers, json=payload)
+        assert res.status_code == 200, f"Expected 200, got {res.status_code}: {res.text}"
+        data = res.json()
+        assert len(data) >= 3, f"Expected at least 3 competencies returned, got {len(data)}"
+        comp_sampling = next((c for c in data if c["competency_id"] == "COMP_SAMPLING_METHODOLOGY"), None)
+        assert comp_sampling is not None and comp_sampling["current_level"] == 45
+        print(f"   {PASS} Successfully updated user competency assessments")
+        passed += 1
+    except AssertionError as e:
+        print(f"   {FAIL} {e}")
+        failed += 1
+
+    # ----------------------------------------------------------------
+    # Test 19: GET /api/v1/users/me/competencies (Retrieve User Profile)
+    # ----------------------------------------------------------------
+    print("\n19. GET /api/v1/users/me/competencies (Fetch User Levels)...")
+    try:
+        assert user_token, "No user_token available"
+        headers = {"Authorization": f"Bearer {user_token}"}
+        res = client.get("/api/v1/users/me/competencies", headers=headers)
+        assert res.status_code == 200, f"Expected 200, got {res.status_code}: {res.text}"
+        data = res.json()
+        assert len(data) >= 3, f"Expected saved competencies, got {len(data)}"
+        print(f"   {PASS} Fetched {len(data)} user competency records with 0-100 scores")
+        passed += 1
+    except AssertionError as e:
+        print(f"   {FAIL} {e}")
+        failed += 1
+
+    # ----------------------------------------------------------------
+    # Test 20: PUT /api/v1/users/me/competencies with Invalid Competency ID (400)
+    # ----------------------------------------------------------------
+    print("\n20. PUT /api/v1/users/me/competencies with Nonexistent Competency ID (expect 400)...")
+    try:
+        assert user_token, "No user_token available"
+        headers = {"Authorization": f"Bearer {user_token}"}
+        res = client.put("/api/v1/users/me/competencies", headers=headers, json={
+            "competencies": [{"competency_id": "COMP_FAKE_INVALID_999", "current_level": 50}]
+        })
+        assert res.status_code == 400, f"Expected 400, got {res.status_code}: {res.text}"
+        print(f"   {PASS} Invalid competency ID rejected with 400 Bad Request")
+        passed += 1
+    except AssertionError as e:
+        print(f"   {FAIL} {e}")
+        failed += 1
+
+    # ----------------------------------------------------------------
+    # Test 21: PUT /api/v1/users/me/competencies with Score Below 0 (400/422)
+    # ----------------------------------------------------------------
+    print("\n21. PUT /api/v1/users/me/competencies with Score Below 0 (expect 400/422)...")
+    try:
+        assert user_token, "No user_token available"
+        headers = {"Authorization": f"Bearer {user_token}"}
+        res = client.put("/api/v1/users/me/competencies", headers=headers, json={
+            "competencies": [{"competency_id": "COMP_SAMPLING_METHODOLOGY", "current_level": -10}]
+        })
+        assert res.status_code in [400, 422], f"Expected 400 or 422, got {res.status_code}: {res.text}"
+        print(f"   {PASS} Score below 0 rejected with {res.status_code}")
+        passed += 1
+    except AssertionError as e:
+        print(f"   {FAIL} {e}")
+        failed += 1
+
+    # ----------------------------------------------------------------
+    # Test 22: PUT /api/v1/users/me/competencies with Score Above 100 (400/422)
+    # ----------------------------------------------------------------
+    print("\n22. PUT /api/v1/users/me/competencies with Score Above 100 (expect 400/422)...")
+    try:
+        assert user_token, "No user_token available"
+        headers = {"Authorization": f"Bearer {user_token}"}
+        res = client.put("/api/v1/users/me/competencies", headers=headers, json={
+            "competencies": [{"competency_id": "COMP_SAMPLING_METHODOLOGY", "current_level": 150}]
+        })
+        assert res.status_code in [400, 422], f"Expected 400 or 422, got {res.status_code}: {res.text}"
+        print(f"   {PASS} Score above 100 rejected with {res.status_code}")
+        passed += 1
+    except AssertionError as e:
+        print(f"   {FAIL} {e}")
+        failed += 1
+
+    # ----------------------------------------------------------------
+    # Test 23: GET /api/v1/users/me/skill-gaps with Target Role (Calculation & Severity)
+    # ----------------------------------------------------------------
+    print("\n23. GET /api/v1/users/me/skill-gaps with Target Role (Gap & Severity Engine)...")
+    try:
+        assert user_token, "No user_token available"
+        headers = {"Authorization": f"Bearer {user_token}"}
+        # Set target role to ROLE_STAT_OFFICER
+        client.put("/api/v1/users/me/profile", headers=headers, json={
+            "target_role_id": "ROLE_STAT_OFFICER"
+        })
+
+        res = client.get("/api/v1/users/me/skill-gaps", headers=headers)
+        assert res.status_code == 200, f"Expected 200, got {res.status_code}: {res.text}"
+        gaps = res.json()
+        assert len(gaps) > 0, "Expected non-empty skill gaps for ROLE_STAT_OFFICER"
+        # COMP_SURVEY_FIELD_OPERATIONS: req=75, current=50 -> gap=25 (Moderate)
+        field_op_gap = next((g for g in gaps if g["competency_id"] == "COMP_SURVEY_FIELD_OPERATIONS"), None)
+        assert field_op_gap is not None, "Expected COMP_SURVEY_FIELD_OPERATIONS in gaps"
+        assert field_op_gap["required_level"] == 75
+        assert field_op_gap["current_level"] == 50
+        assert field_op_gap["gap"] == 25
+        assert field_op_gap["severity"] == "Moderate", f"Expected Moderate, got {field_op_gap['severity']}"
+        assert "resulting in a gap of 25" in field_op_gap["explanation"]
+        print(f"   {PASS} Deterministic gap (25) & severity ('Moderate') calculated accurately")
+        passed += 1
+    except AssertionError as e:
+        print(f"   {FAIL} {e}")
+        failed += 1
+
+    # ----------------------------------------------------------------
+    # Test 24: GET /api/v1/users/me/skill-gaps with No Target Role (Returns [])
+    # ----------------------------------------------------------------
+    print("\n24. GET /api/v1/users/me/skill-gaps with No Target Role (No Fake Gaps)...")
+    try:
+        assert user_token, "No user_token available"
+        headers = {"Authorization": f"Bearer {user_token}"}
+        # Clear target role
+        client.put("/api/v1/users/me/profile", headers=headers, json={
+            "target_role_id": ""
+        })
+
+        res = client.get("/api/v1/users/me/skill-gaps", headers=headers)
+        assert res.status_code == 200, f"Expected 200, got {res.status_code}: {res.text}"
+        assert res.json() == [], f"Expected empty list when no target role, got {res.json()}"
+        print(f"   {PASS} Returns empty list when no target role is configured (no fake gaps)")
+        passed += 1
+    except AssertionError as e:
+        print(f"   {FAIL} {e}")
+        failed += 1
+
+    # ----------------------------------------------------------------
+    # Test 25: GET /api/v1/users/me/skill-gaps with No Competency Assessment
+    # ----------------------------------------------------------------
+    print("\n25. GET /api/v1/users/me/skill-gaps with Target Role but No Assessment (0 baseline)...")
+    try:
+        # Create a clean user with target role but 0 assessments
+        clean_user_pwd = hash_password("Password123!")
+        clean_user = create_user(_mock_db, username="clean_officer_beta", email="beta@gov.in",
+                                 password_hash=clean_user_pwd, role="USER")
+        # Login
+        l_res = client.post("/api/v1/auth/login", json={"email_or_username": "beta@gov.in", "password": "Password123!"})
+        beta_token = l_res.json()["access_token"]
+        beta_headers = {"Authorization": f"Bearer {beta_token}"}
+
+        # Set target role to ROLE_STAT_OFFICER
+        client.put("/api/v1/users/me/profile", headers=beta_headers, json={"target_role_id": "ROLE_STAT_OFFICER"})
+
+        res = client.get("/api/v1/users/me/skill-gaps", headers=beta_headers)
+        assert res.status_code == 200, f"Expected 200, got {res.status_code}: {res.text}"
+        beta_gaps = res.json()
+        assert len(beta_gaps) > 0, "Expected gaps against requirements"
+        for g in beta_gaps:
+            assert g["current_level"] == 0, f"Expected 0 current_level without assessment, got {g['current_level']}"
+            assert g["gap"] == g["required_level"], f"Expected gap == required_level, got {g['gap']}"
+        print(f"   {PASS} Accurately baseline evaluated 0 current_level without fabricated scores")
+        passed += 1
+    except AssertionError as e:
+        print(f"   {FAIL} {e}")
+        failed += 1
+
+    # ----------------------------------------------------------------
+    # Test 26: Unauthorized Access to Protected Competency Endpoints (Expect 401)
+    # ----------------------------------------------------------------
+    print("\n26. Protected Competency & Skill-Gap Endpoints Without Token (expect 401)...")
+    try:
+        r1 = client.get("/api/v1/users/me/competencies")
+        r2 = client.put("/api/v1/users/me/competencies", json={"competencies": []})
+        r3 = client.get("/api/v1/users/me/skill-gaps")
+        assert r1.status_code == 401, f"GET competencies: expected 401, got {r1.status_code}"
+        assert r2.status_code == 401, f"PUT competencies: expected 401, got {r2.status_code}"
+        assert r3.status_code == 401, f"GET skill-gaps: expected 401, got {r3.status_code}"
+        print(f"   {PASS} All protected Stage 3 endpoints correctly rejected unauthenticated calls (401)")
+        passed += 1
+    except AssertionError as e:
+        print(f"   {FAIL} {e}")
+        failed += 1
+
     print("\n----------------------------------------------------")
-    print(f"RESULTS: {passed} passed, {failed} failed out of 12 tests")
+    print(f"RESULTS: {passed} passed, {failed} failed out of 26 tests")
     if failed == 0:
-        print("ALL 12 STAGE 2 TESTS PASSED SUCCESSFULLY!")
+        print("ALL 26 STAGE 2 & STAGE 3 TESTS PASSED SUCCESSFULLY!")
     else:
         print(f"WARNING: {failed} test(s) FAILED.")
         sys.exit(1)
     print("====================================================\n")
 
     # Stop patchers
+    patcher_ucomp_db.stop()
+    patcher_comp_db.stop()
+    patcher_comp_ep.stop()
+    patcher_roles_db.stop()
+    patcher_users_ep.stop()
+    patcher_roles.stop()
     patcher_users.stop()
     patcher_deps.stop()
     patcher_auth.stop()
