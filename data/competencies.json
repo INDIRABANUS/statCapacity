@@ -1,0 +1,218 @@
+[
+  {
+    "competency_id": "COMP_SAMPLING_METHODOLOGY",
+    "name": "Survey Sampling & Frame Design",
+    "category": "Statistical/Domain",
+    "description": "Ability to design, evaluate, and implement probability sampling frames and multi-stage selection techniques for government statistical collections.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Understands basic random sampling concepts and primary sampling units.",
+      "Intermediate": "41-65: Able to calculate sample sizes, selection probabilities, and weights for stratified designs.",
+      "Advanced": "66-85: Formulates multi-stage complex sampling frames, adjusts non-response weights, and calculates variance.",
+      "Expert": "86-100: Establishes national sampling standards and innovates master sampling frame design."
+    }
+  },
+  {
+    "competency_id": "COMP_ECONOMIC_STATISTICS",
+    "name": "Macroeconomic Statistics & Price Indices",
+    "category": "Statistical/Domain",
+    "description": "Mastery of System of National Accounts (SNA), inflation measurement, CPI/WPI index computation, and industrial economic data.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Grasps macro-economic concepts, price basket concepts, and basic index formulas.",
+      "Intermediate": "41-65: Compiles monthly index numbers, checks unit price variations, and formats sector GVA estimates.",
+      "Advanced": "66-85: Conducts base-year revisions, hedonic price adjustments, and national accounts aggregation.",
+      "Expert": "86-100: Leads national economic accounting frameworks and international standard alignment."
+    }
+  },
+  {
+    "competency_id": "COMP_DATA_CLEANING_VALIDATION",
+    "name": "Micro-data Editing, Imputation & Quality Assurance",
+    "category": "Digital/Data",
+    "description": "Capability to execute automated data validation rules, outlier detection, and statistical imputation on raw field survey data.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Performs basic range checks and identifies missing microdata fields.",
+      "Intermediate": "41-65: Writes automated data validation scripts and executes deterministic rule-based imputation.",
+      "Advanced": "66-85: Designs stochastic imputation models (hot-deck/predictive mean matching) and audits edit rules.",
+      "Expert": "86-100: Architect end-to-end automated data quality assurance frameworks for national censuses."
+    }
+  },
+  {
+    "competency_id": "COMP_STATISTICAL_COMPUTING",
+    "name": "Statistical Programming with R & Python",
+    "category": "Technical",
+    "description": "Proficiency in using R, Python, and statistical packages for reproducible statistical processing and modeling.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Executes basic data loading, filtering, and summary statistical commands in R/Python.",
+      "Intermediate": "41-65: Writes modular scripts for data transformations, survey weighting, and regression analysis.",
+      "Advanced": "66-85: Builds custom statistical packages, automated data pipelines, and optimized matrix calculations.",
+      "Expert": "86-100: Standardizes statistical computing libraries across government statistical organizations."
+    }
+  },
+  {
+    "competency_id": "COMP_GIS_SPATIAL_ANALYTICS",
+    "name": "Geospatial Analytics & Census Mapping",
+    "category": "Technical",
+    "description": "Skills in integrating spatial GIS boundary data, satellite imagery, and geocoded enumeration blocks into statistical frames.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Views spatial layers, overlays administrative boundary maps, and geocodes field locations.",
+      "Intermediate": "41-65: Performs spatial join queries, constructs digital enumeration maps, and analyzes spatial clustering.",
+      "Advanced": "66-85: Integrates remote sensing data with survey samples for small area spatial modeling.",
+      "Expert": "86-100: Directs spatial data infrastructure policy and national GIS statistical mapping programs."
+    }
+  },
+  {
+    "competency_id": "COMP_DATABASE_METADATA",
+    "name": "Relational Databases & SDMX Metadata Management",
+    "category": "Technical",
+    "description": "Design and management of relational data systems, data structures, and SDMX standard metadata definitions.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Executes SQL SELECT queries and understands primary key relationships.",
+      "Intermediate": "41-65: Constructs database tables, indexes, stored procedures, and basic SDMX structure definitions.",
+      "Advanced": "66-85: Optimizes complex database schemas, manages SDMX registries, and implements microdata portals.",
+      "Expert": "86-100: Architects enterprise statistical data architecture and global metadata exchange pipelines."
+    }
+  },
+  {
+    "competency_id": "COMP_OFFICIAL_STAT_GOVERNANCE",
+    "name": "Official Statistics Quality Frameworks & Policy",
+    "category": "Statistical/Domain",
+    "description": "Understanding UN Fundamental Principles of Official Statistics, National Quality Assurance Frameworks (NQAF), and data standards.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Familiar with official statistical mandates and basic data quality guidelines.",
+      "Intermediate": "41-65: Applies NQAF quality dimensions (relevance, accuracy, timeliness) during survey operations.",
+      "Advanced": "66-85: Conducts independent quality evaluations of statistical releases and methodological compliance.",
+      "Expert": "86-100: Authors national statistical legislation, quality protocols, and international agreements."
+    }
+  },
+  {
+    "competency_id": "COMP_DATA_VISUALIZATION",
+    "name": "Data Visualization & Analytical Reporting",
+    "category": "Digital/Data",
+    "description": "Transforming complex statistical datasets into visual dashboards, infographics, and policy-relevant analytical publications.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Creates standard charts, bar graphs, and basic summary tables in BI software.",
+      "Intermediate": "41-65: Builds interactive multi-page dashboards with dynamic filters and drill-down analytics.",
+      "Advanced": "66-85: Authors comprehensive statistical bulletins with custom data visualizations and narrative context.",
+      "Expert": "86-100: Sets organization-wide data visualization design guidelines and public release standards."
+    }
+  },
+  {
+    "competency_id": "COMP_ADVANCED_ANALYTICS_ML",
+    "name": "Machine Learning & Predictive Modeling for Public Policy",
+    "category": "Technical",
+    "description": "Application of supervised and unsupervised machine learning, natural language processing, and anomaly detection to government data.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Understands basic decision tree and linear regression model concepts.",
+      "Intermediate": "41-65: Trains and evaluates classification algorithms for data validation and trend prediction.",
+      "Advanced": "66-85: Implements deep learning and NLP models on unstructured administrative records.",
+      "Expert": "86-100: Establishes AI/ML governance frameworks and predictive analytics strategies in public administration."
+    }
+  },
+  {
+    "competency_id": "COMP_SURVEY_FIELD_OPERATIONS",
+    "name": "Field Operations Management & Logistics",
+    "category": "Leadership/Management",
+    "description": "Planning, deploying, and supervising field enumeration teams, transport logistics, and CAPI (Computer-Assisted Personal Interviewing) hardware.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Manages individual field enumeration assignments and CAPI tablet operation.",
+      "Intermediate": "41-65: Coordinates district-level field operations, enumerator deployment, and daily progress tracking.",
+      "Advanced": "66-85: Oversees state/regional survey logistics, contingency management, and supervisor training.",
+      "Expert": "86-100: Directs nationwide census and multi-domain survey field operations."
+    }
+  },
+  {
+    "competency_id": "COMP_DATA_PRIVACY_ETHICS",
+    "name": "Ethical Data Handling & Respondent Confidentiality",
+    "category": "Behavioral",
+    "description": "Strict compliance with respondent anonymity standards, microdata anonymization techniques, and data protection legislation.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Knows basic confidentiality rules and safe data handling protocols.",
+      "Intermediate": "41-65: Applies disclosure control methods (top-coding, suppression) prior to data release.",
+      "Advanced": "66-85: Implements differential privacy models and microdata anonymization audits.",
+      "Expert": "86-100: Formulates institutional privacy policies, ethics reviews, and data sharing legal frameworks."
+    }
+  },
+  {
+    "competency_id": "COMP_STATISTICAL_COMMUNICATION",
+    "name": "Technical Communication & Policy Dissemination",
+    "category": "Behavioral",
+    "description": "Communicating statistical uncertainty, methodological details, and key indicator trends to non-technical policy makers and the public.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Drafts clear explanations of statistical terms for routine progress reports.",
+      "Intermediate": "41-65: Authors statistical press releases, methodological notes, and policy briefs.",
+      "Advanced": "66-85: Conducts media briefings, defends methodological changes, and presents at international forums.",
+      "Expert": "86-100: Serves as chief statistical spokesperson and leads national statistical literacy campaigns."
+    }
+  },
+  {
+    "competency_id": "COMP_STRATEGIC_STAT_LEADERSHIP",
+    "name": "Strategic Capacity Development & Institutional Governance",
+    "category": "Leadership/Management",
+    "description": "Leading organizational vision, human capital capacity building, continuous learning strategy, and inter-agency coordination.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Participates actively in peer training and self-directed skill enhancement.",
+      "Intermediate": "41-65: Mentors junior staff and designs practical technical training modules.",
+      "Advanced": "66-85: Manages institutional capacity building programs and cross-departmental skill initiatives.",
+      "Expert": "86-100: Shapes long-term national statistical workforce strategy and institutional modernization."
+    }
+  },
+  {
+    "competency_id": "COMP_PROJECT_TIME_MANAGEMENT",
+    "name": "Statistical Project Planning & Execution",
+    "category": "Leadership/Management",
+    "description": "Managing project lifecycles, Gantt milestones, task dependencies, and deliverable quality for complex statistical rounds.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Executes assigned project tasks within specified deadlines.",
+      "Intermediate": "41-65: Prepares work breakdown structures, monitors timelines, and tracks milestone completion.",
+      "Advanced": "66-85: Manages multi-phase statistical programs, resolving bottleneck risks and resource conflicts.",
+      "Expert": "86-100: Controls national statistical master schedules across multiple concurrent surveys."
+    }
+  },
+  {
+    "competency_id": "COMP_BIG_DATA_INFRASTRUCTURE",
+    "name": "Enterprise Data Pipelines & Infrastructure",
+    "category": "Digital/Data",
+    "description": "Architecting automated ETL data pipelines, data warehouses, and cloud infrastructure for large administrative data streams.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Understands basic data warehouse concepts and file storage schemas.",
+      "Intermediate": "41-65: Configures routine ETL scripts, scheduled cron jobs, and database sync pipelines.",
+      "Advanced": "66-85: Designs resilient distributed processing pipelines and hybrid cloud data architectures.",
+      "Expert": "86-100: Leads enterprise data platform strategy for nationwide digital statistics."
+    }
+  },
+  {
+    "competency_id": "COMP_HOUSEHOLD_SURVEY_DESIGN",
+    "name": "Household & Socio-Economic Survey Methodology",
+    "category": "Statistical/Domain",
+    "description": "Expertise in designing household consumer expenditure, labor force, health, and socio-economic survey schedules.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Understands standard household survey question structures and skip-logic.",
+      "Intermediate": "41-65: Prepares questionnaire blocks, pre-tests schedules, and writes enumerator instruction manuals.",
+      "Advanced": "66-85: Evaluates non-sampling error, designs computer-assisted questionnaire logic, and tests response rates.",
+      "Expert": "86-100: Innovates national socio-economic survey frameworks and indicator harmonization."
+    }
+  },
+  {
+    "competency_id": "COMP_CRITICAL_PROBLEM_SOLVING",
+    "name": "Analytical Problem Solving & Operational Decision Making",
+    "category": "Behavioral",
+    "description": "Diagnosing non-systematic survey errors, field anomalies, data discrepancies, and technical bottlenecks under pressure.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Identifies basic operational problems and escalates to field supervisors.",
+      "Intermediate": "41-65: Analyzes error logs, diagnoses field data discrepancies, and implements corrective actions.",
+      "Advanced": "66-85: Solves complex methodological bottlenecks and field crisis situations systematically.",
+      "Expert": "86-100: Establishes institutional problem resolution frameworks and resilience protocols."
+    }
+  },
+  {
+    "competency_id": "COMP_RESOURCE_BUDGET_AUDIT",
+    "name": "Field Audit, Quality Control & Resource Allocation",
+    "category": "Leadership/Management",
+    "description": "Financial planning, resource allocation, and supervisory audit controls to prevent data tampering and field inefficiencies.",
+    "proficiency_levels": {
+      "Beginner": "25-40: Maintains field expense logs and tracks CAPI equipment inventory.",
+      "Intermediate": "41-65: Audits field sample coverage, verifies enumerator daily logs, and manages sub-district budgets.",
+      "Advanced": "66-85: Conducts independent quality audits, re-interview statistics, and financial control reviews.",
+      "Expert": "86-100: Oversees national survey expenditure control, audit compliance, and resource allocation."
+    }
+  }
+]

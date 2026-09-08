@@ -1,0 +1,18 @@
+{
+  "name": "sih2-prototype-data-foundation",
+  "version": "1.0.0",
+  "description": "Prototype Data Foundation for Official Statistics & Capacity Building System",
+  "main": "scripts/seed.js",
+  "scripts": {
+    "validate": "node scripts/validate.js",
+    "seed": "node scripts/seed.js",
+    "test": "node scripts/validate.js && node scripts/seed.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "mongodb": "^6.8.0"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.0.0"
+  }
+}

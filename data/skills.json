@@ -1,0 +1,254 @@
+[
+  {
+    "skill_id": "SKILL_STAT_SAMPLING",
+    "skill_name": "Survey Sampling & Probability Theory",
+    "category": "Statistical",
+    "description": "Formulating stratified, cluster, and multi-stage random sampling methodologies for large-scale demographic and socio-economic surveys."
+  },
+  {
+    "skill_id": "SKILL_STAT_REGRESSION",
+    "skill_name": "Regression Analysis & Time Series",
+    "category": "Statistical",
+    "description": "Applying linear, logistic, ARIMA, and seasonal decomposition models to economic and social trend data."
+  },
+  {
+    "skill_id": "SKILL_STAT_HYPOTHESIS",
+    "skill_name": "Hypothesis Testing & Statistical Inference",
+    "category": "Statistical",
+    "description": "Designing parametric and non-parametric statistical tests, confidence interval estimates, and p-value evaluations."
+  },
+  {
+    "skill_id": "SKILL_STAT_INDEX_NUM",
+    "skill_name": "Index Number Compilation (CPI/WPI/IIP)",
+    "category": "Statistical",
+    "description": "Constructing Laspeyres, Paasche, and Fisher index numbers for Consumer Price Index, Wholesale Price Index, and Index of Industrial Production."
+  },
+  {
+    "skill_id": "SKILL_STAT_DEMOGRAPHY",
+    "skill_name": "Demography & Vital Statistics",
+    "category": "Statistical",
+    "description": "Analyzing mortality, fertility, migration rates, and population projection methodologies."
+  },
+  {
+    "skill_id": "SKILL_STAT_SAE",
+    "skill_name": "Small Area Estimation",
+    "category": "Statistical",
+    "description": "Using model-based estimation techniques to derive reliable statistics for small geographic or administrative domains."
+  },
+  {
+    "skill_id": "SKILL_STAT_EDIT_IMPUTE",
+    "skill_name": "Data Editing & Missing Value Imputation",
+    "category": "Statistical",
+    "description": "Detecting micro-data outliers and executing deterministic or stochastic imputation methods (e.g., hot-deck, nearest neighbor)."
+  },
+  {
+    "skill_id": "SKILL_STAT_FRAME_DEV",
+    "skill_name": "Sampling Frame Development & Selection",
+    "category": "Statistical",
+    "description": "Creating, updating, and validating sampling frames based on census records and urban/rural block maps."
+  },
+  {
+    "skill_id": "SKILL_TECH_R_LANG",
+    "skill_name": "R Programming for Statistical Computing",
+    "category": "Technical",
+    "description": "Writing reproducible R scripts using tidyverse, survey package, and ggplot2 for statistical data manipulation."
+  },
+  {
+    "skill_id": "SKILL_TECH_PYTHON",
+    "skill_name": "Python Data Science Stack (Pandas/NumPy/SciPy)",
+    "category": "Technical",
+    "description": "Utilizing Python libraries for efficient numerical computing, data wrangling, and statistical modeling."
+  },
+  {
+    "skill_id": "SKILL_TECH_SQL",
+    "skill_name": "Relational Database Querying & SQL",
+    "category": "Technical",
+    "description": "Crafting complex SQL queries, aggregations, window functions, and schema indexes for relational data repositories."
+  },
+  {
+    "skill_id": "SKILL_TECH_STATA",
+    "skill_name": "Stata & SPSS Econometric Analysis",
+    "category": "Technical",
+    "description": "Using specialized statistical software packages for econometrics, survey data weighting, and tabulations."
+  },
+  {
+    "skill_id": "SKILL_TECH_GIS",
+    "skill_name": "Geographic Information Systems (QGIS/ArcGIS)",
+    "category": "Technical",
+    "description": "Spatial overlay analysis, geocoding enumeration blocks, and thematic map production."
+  },
+  {
+    "skill_id": "SKILL_TECH_SCRAPING",
+    "skill_name": "Data Scraping & Automated Data Ingestion",
+    "category": "Technical",
+    "description": "Extracting web data, parsing HTML/JSON endpoints, and automating administrative data feeds."
+  },
+  {
+    "skill_id": "SKILL_TECH_BIGDATA",
+    "skill_name": "Big Data Analytics (PySpark/Hadoop)",
+    "category": "Technical",
+    "description": "Processing massive datasets using distributed computing frameworks and parallel data processing."
+  },
+  {
+    "skill_id": "SKILL_TECH_ML",
+    "skill_name": "Machine Learning & Anomaly Detection",
+    "category": "Technical",
+    "description": "Building classification algorithms and unsupervised models to identify data quality anomalies and survey fraud."
+  },
+  {
+    "skill_id": "SKILL_DIG_VISUALIZATION",
+    "skill_name": "Interactive Data Visualization (PowerBI/Tableau)",
+    "category": "Data & Digital",
+    "description": "Designing clear interactive dashboards, executive key performance indicators, and statistical charts."
+  },
+  {
+    "skill_id": "SKILL_DIG_GOVERNANCE",
+    "skill_name": "Data Governance & Quality Standards",
+    "category": "Data & Digital",
+    "description": "Applying data stewardship principles, quality frameworks (DQAF), and standard data lifecycle policies."
+  },
+  {
+    "skill_id": "SKILL_DIG_SDMX",
+    "skill_name": "SDMX Metadata & Data Exchange Standards",
+    "category": "Data & Digital",
+    "description": "Formatting statistical data structures according to international Statistical Data and Metadata eXchange (SDMX) protocols."
+  },
+  {
+    "skill_id": "SKILL_DIG_CLOUD",
+    "skill_name": "Cloud Data Storage & Infrastructure Management",
+    "category": "Data & Digital",
+    "description": "Managing cloud storage buckets, containerized database instances, and secure access permissions."
+  },
+  {
+    "skill_id": "SKILL_DIG_CYBERSECURITY",
+    "skill_name": "Data Security & Encryption Standards",
+    "category": "Data & Digital",
+    "description": "Implementing encryption at rest and in transit, user authentication protocols, and data anonymization techniques."
+  },
+  {
+    "skill_id": "SKILL_DIG_OPEN_DATA",
+    "skill_name": "Open Data Portal Management & Publishing",
+    "category": "Data & Digital",
+    "description": "Preparing machine-readable public datasets, microdata dissemination standards, and API catalog maintenance."
+  },
+  {
+    "skill_id": "SKILL_DIG_PIPELINES",
+    "skill_name": "ETL Pipeline Construction & Automation",
+    "category": "Data & Digital",
+    "description": "Designing Extract-Transform-Load (ETL) workflows to ingest field survey data into central analytical data warehouses."
+  },
+  {
+    "skill_id": "SKILL_DOM_NAT_ACCOUNTS",
+    "skill_name": "National Accounts Statistics (GDP/GVA)",
+    "category": "Domain",
+    "description": "Estimating Gross Domestic Product, Gross Value Added, and sectoral contributions per System of National Accounts (SNA) guidelines."
+  },
+  {
+    "skill_id": "SKILL_DOM_PRICE_INDICES",
+    "skill_name": "Consumer Price Index & Inflation Metrics",
+    "category": "Domain",
+    "description": "Field basket item pricing, item weight revisions, and inflation forecasting models."
+  },
+  {
+    "skill_id": "SKILL_DOM_ASI",
+    "skill_name": "Annual Survey of Industries & Industrial Data",
+    "category": "Domain",
+    "description": "Factories Act registered enterprise statistical collection, capital output ratios, and industrial valuation."
+  },
+  {
+    "skill_id": "SKILL_DOM_HOUSEHOLD",
+    "skill_name": "Socio-Economic Household Survey Design",
+    "category": "Domain",
+    "description": "Structuring questionnaire schedules for consumer expenditure, employment, education, and health surveys."
+  },
+  {
+    "skill_id": "SKILL_DOM_SDG",
+    "skill_name": "Sustainable Development Goals (SDG) Indicators",
+    "category": "Domain",
+    "description": "Tracking and reporting national metadata for UN SDG global indicator frameworks."
+  },
+  {
+    "skill_id": "SKILL_DOM_AGRICULTURE",
+    "skill_name": "Agricultural & Rural Statistics",
+    "category": "Domain",
+    "description": "Crop yield estimation, land-use classification, livestock census, and agricultural census methodologies."
+  },
+  {
+    "skill_id": "SKILL_DOM_LABOUR",
+    "skill_name": "Periodic Labour Force Survey (PLFS) Methodology",
+    "category": "Domain",
+    "description": "Worker population ratio, activity status (CWS/UPSS), and unemployment rate estimation methods."
+  },
+  {
+    "skill_id": "SKILL_BEH_ANALYTICAL",
+    "skill_name": "Critical Analytical Thinking",
+    "category": "Behavioral",
+    "description": "Evaluating data anomalies logically, identifying root causes of data inconsistencies, and drawing sound conclusions."
+  },
+  {
+    "skill_id": "SKILL_BEH_ETHICS",
+    "skill_name": "Ethical Handling of Confidential Data",
+    "category": "Behavioral",
+    "description": "Strict compliance with statistical secrecy acts, respondent privacy, and non-disclosure regulations."
+  },
+  {
+    "skill_id": "SKILL_BEH_COMMUNICATION",
+    "skill_name": "Technical Communication & Writing",
+    "category": "Behavioral",
+    "description": "Translating complex statistical findings into clear executive summaries and public press releases."
+  },
+  {
+    "skill_id": "SKILL_BEH_PROBLEM_SOLVING",
+    "skill_name": "Problem Solving & Field Decision Making",
+    "category": "Behavioral",
+    "description": "Resolving unforeseen operational challenges during field survey enumeration efficiently."
+  },
+  {
+    "skill_id": "SKILL_MGT_SURVEY_LOGISTICS",
+    "skill_name": "Field Operations Logistics & Scheduling",
+    "category": "Management",
+    "description": "Planning transport, enumeration schedules, device provisioning, and field team routing."
+  },
+  {
+    "skill_id": "SKILL_MGT_PROJECT",
+    "skill_name": "Statistical Project Management",
+    "category": "Management",
+    "description": "Managing milestones, scope, deliverables, and timelines for multi-state statistical operations."
+  },
+  {
+    "skill_id": "SKILL_MGT_TEAM_SUPERVISION",
+    "skill_name": "Field Enumerator Supervision & Team Leadership",
+    "category": "Leadership",
+    "description": "Leading field enumerator cadres, setting quality benchmarks, and evaluating team performance."
+  },
+  {
+    "skill_id": "SKILL_MGT_RISK",
+    "skill_name": "Risk Management in Large-Scale Surveys",
+    "category": "Management",
+    "description": "Identifying operational, environmental, and data non-response risks in field statistics."
+  },
+  {
+    "skill_id": "SKILL_MGT_CAPACITY",
+    "skill_name": "Organizational Capacity Building & Mentorship",
+    "category": "Leadership",
+    "description": "Designing staff training curriculums, conducting workshops, and mentoring junior statistical personnel."
+  },
+  {
+    "skill_id": "SKILL_MGT_STAKEHOLDER",
+    "skill_name": "Stakeholder Engagement & Policy Liaison",
+    "category": "Leadership",
+    "description": "Liaising with ministry officials, international statistical bodies (UN/World Bank), and academic institutions."
+  },
+  {
+    "skill_id": "SKILL_MGT_BUDGETING",
+    "skill_name": "Resource & Operational Budget Management",
+    "category": "Management",
+    "description": "Estimating survey financial costs, allocating field budgets, and auditing expenditure schedules."
+  },
+  {
+    "skill_id": "SKILL_MGT_QUALITY_AUDIT",
+    "skill_name": "Quality Audit & Data Verification Management",
+    "category": "Management",
+    "description": "Conducting random spot-checks, re-interviews, and supervisory data validation protocols."
+  }
+]

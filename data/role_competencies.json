@@ -1,0 +1,242 @@
+[
+  {
+    "role_id": "ROLE_STAT_OFFICER",
+    "competency_id": "COMP_SURVEY_FIELD_OPERATIONS",
+    "required_level": 75
+  },
+  {
+    "role_id": "ROLE_STAT_OFFICER",
+    "competency_id": "COMP_SAMPLING_METHODOLOGY",
+    "required_level": 60
+  },
+  {
+    "role_id": "ROLE_STAT_OFFICER",
+    "competency_id": "COMP_DATA_CLEANING_VALIDATION",
+    "required_level": 65
+  },
+  {
+    "role_id": "ROLE_STAT_OFFICER",
+    "competency_id": "COMP_DATA_PRIVACY_ETHICS",
+    "required_level": 70
+  },
+  {
+    "role_id": "ROLE_STAT_OFFICER",
+    "competency_id": "COMP_CRITICAL_PROBLEM_SOLVING",
+    "required_level": 55
+  },
+  {
+    "role_id": "ROLE_SR_STAT_ANALYST",
+    "competency_id": "COMP_SAMPLING_METHODOLOGY",
+    "required_level": 80
+  },
+  {
+    "role_id": "ROLE_SR_STAT_ANALYST",
+    "competency_id": "COMP_STATISTICAL_COMPUTING",
+    "required_level": 75
+  },
+  {
+    "role_id": "ROLE_SR_STAT_ANALYST",
+    "competency_id": "COMP_ECONOMIC_STATISTICS",
+    "required_level": 75
+  },
+  {
+    "role_id": "ROLE_SR_STAT_ANALYST",
+    "competency_id": "COMP_DATA_CLEANING_VALIDATION",
+    "required_level": 80
+  },
+  {
+    "role_id": "ROLE_SR_STAT_ANALYST",
+    "competency_id": "COMP_OFFICIAL_STAT_GOVERNANCE",
+    "required_level": 70
+  },
+  {
+    "role_id": "ROLE_DATA_ANALYST",
+    "competency_id": "COMP_DATA_CLEANING_VALIDATION",
+    "required_level": 75
+  },
+  {
+    "role_id": "ROLE_DATA_ANALYST",
+    "competency_id": "COMP_STATISTICAL_COMPUTING",
+    "required_level": 70
+  },
+  {
+    "role_id": "ROLE_DATA_ANALYST",
+    "competency_id": "COMP_DATA_VISUALIZATION",
+    "required_level": 80
+  },
+  {
+    "role_id": "ROLE_DATA_ANALYST",
+    "competency_id": "COMP_DATABASE_METADATA",
+    "required_level": 65
+  },
+  {
+    "role_id": "ROLE_DATA_ANALYST",
+    "competency_id": "COMP_STATISTICAL_COMMUNICATION",
+    "required_level": 60
+  },
+  {
+    "role_id": "ROLE_SURVEY_OFFICER",
+    "competency_id": "COMP_SURVEY_FIELD_OPERATIONS",
+    "required_level": 85
+  },
+  {
+    "role_id": "ROLE_SURVEY_OFFICER",
+    "competency_id": "COMP_RESOURCE_BUDGET_AUDIT",
+    "required_level": 75
+  },
+  {
+    "role_id": "ROLE_SURVEY_OFFICER",
+    "competency_id": "COMP_PROJECT_TIME_MANAGEMENT",
+    "required_level": 70
+  },
+  {
+    "role_id": "ROLE_SURVEY_OFFICER",
+    "competency_id": "COMP_HOUSEHOLD_SURVEY_DESIGN",
+    "required_level": 65
+  },
+  {
+    "role_id": "ROLE_SURVEY_OFFICER",
+    "competency_id": "COMP_CRITICAL_PROBLEM_SOLVING",
+    "required_level": 70
+  },
+  {
+    "role_id": "ROLE_RESEARCH_OFFICER",
+    "competency_id": "COMP_ECONOMIC_STATISTICS",
+    "required_level": 85
+  },
+  {
+    "role_id": "ROLE_RESEARCH_OFFICER",
+    "competency_id": "COMP_STATISTICAL_COMPUTING",
+    "required_level": 80
+  },
+  {
+    "role_id": "ROLE_RESEARCH_OFFICER",
+    "competency_id": "COMP_HOUSEHOLD_SURVEY_DESIGN",
+    "required_level": 75
+  },
+  {
+    "role_id": "ROLE_RESEARCH_OFFICER",
+    "competency_id": "COMP_STATISTICAL_COMMUNICATION",
+    "required_level": 75
+  },
+  {
+    "role_id": "ROLE_RESEARCH_OFFICER",
+    "competency_id": "COMP_DATA_PRIVACY_ETHICS",
+    "required_level": 75
+  },
+  {
+    "role_id": "ROLE_DATA_SCIENTIST",
+    "competency_id": "COMP_ADVANCED_ANALYTICS_ML",
+    "required_level": 85
+  },
+  {
+    "role_id": "ROLE_DATA_SCIENTIST",
+    "competency_id": "COMP_STATISTICAL_COMPUTING",
+    "required_level": 85
+  },
+  {
+    "role_id": "ROLE_DATA_SCIENTIST",
+    "competency_id": "COMP_BIG_DATA_INFRASTRUCTURE",
+    "required_level": 75
+  },
+  {
+    "role_id": "ROLE_DATA_SCIENTIST",
+    "competency_id": "COMP_DATA_CLEANING_VALIDATION",
+    "required_level": 80
+  },
+  {
+    "role_id": "ROLE_DATA_SCIENTIST",
+    "competency_id": "COMP_GIS_SPATIAL_ANALYTICS",
+    "required_level": 65
+  },
+  {
+    "role_id": "ROLE_GIS_ANALYST",
+    "competency_id": "COMP_GIS_SPATIAL_ANALYTICS",
+    "required_level": 85
+  },
+  {
+    "role_id": "ROLE_GIS_ANALYST",
+    "competency_id": "COMP_SAMPLING_METHODOLOGY",
+    "required_level": 65
+  },
+  {
+    "role_id": "ROLE_GIS_ANALYST",
+    "competency_id": "COMP_DATA_VISUALIZATION",
+    "required_level": 75
+  },
+  {
+    "role_id": "ROLE_GIS_ANALYST",
+    "competency_id": "COMP_DATABASE_METADATA",
+    "required_level": 70
+  },
+  {
+    "role_id": "ROLE_IT_OFFICER",
+    "competency_id": "COMP_DATABASE_METADATA",
+    "required_level": 85
+  },
+  {
+    "role_id": "ROLE_IT_OFFICER",
+    "competency_id": "COMP_BIG_DATA_INFRASTRUCTURE",
+    "required_level": 80
+  },
+  {
+    "role_id": "ROLE_IT_OFFICER",
+    "competency_id": "COMP_DATA_CLEANING_VALIDATION",
+    "required_level": 70
+  },
+  {
+    "role_id": "ROLE_IT_OFFICER",
+    "competency_id": "COMP_DATA_PRIVACY_ETHICS",
+    "required_level": 75
+  },
+  {
+    "role_id": "ROLE_ADMIN_OFFICER",
+    "competency_id": "COMP_OFFICIAL_STAT_GOVERNANCE",
+    "required_level": 80
+  },
+  {
+    "role_id": "ROLE_ADMIN_OFFICER",
+    "competency_id": "COMP_DATA_PRIVACY_ETHICS",
+    "required_level": 85
+  },
+  {
+    "role_id": "ROLE_ADMIN_OFFICER",
+    "competency_id": "COMP_PROJECT_TIME_MANAGEMENT",
+    "required_level": 75
+  },
+  {
+    "role_id": "ROLE_ADMIN_OFFICER",
+    "competency_id": "COMP_STATISTICAL_COMMUNICATION",
+    "required_level": 70
+  },
+  {
+    "role_id": "ROLE_STAT_MANAGER",
+    "competency_id": "COMP_STRATEGIC_STAT_LEADERSHIP",
+    "required_level": 85
+  },
+  {
+    "role_id": "ROLE_STAT_MANAGER",
+    "competency_id": "COMP_PROJECT_TIME_MANAGEMENT",
+    "required_level": 85
+  },
+  {
+    "role_id": "ROLE_STAT_MANAGER",
+    "competency_id": "COMP_SURVEY_FIELD_OPERATIONS",
+    "required_level": 75
+  },
+  {
+    "role_id": "ROLE_STAT_MANAGER",
+    "competency_id": "COMP_OFFICIAL_STAT_GOVERNANCE",
+    "required_level": 80
+  },
+  {
+    "role_id": "ROLE_STAT_MANAGER",
+    "competency_id": "COMP_RESOURCE_BUDGET_AUDIT",
+    "required_level": 80
+  },
+  {
+    "role_id": "ROLE_STAT_MANAGER",
+    "competency_id": "COMP_STATISTICAL_COMMUNICATION",
+    "required_level": 80
+  }
+]

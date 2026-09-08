@@ -1,0 +1,62 @@
+[
+  {
+    "role_id": "ROLE_STAT_OFFICER",
+    "role_name": "Statistical Officer",
+    "department": "Field Operations & Data Collection",
+    "description": "Responsible for conducting field data collection, sample verification, and initial data validation for national statistical surveys."
+  },
+  {
+    "role_id": "ROLE_SR_STAT_ANALYST",
+    "role_name": "Senior Statistical Analyst",
+    "department": "Statistical Methodology & Analysis",
+    "description": "Leads statistical modeling, index number compilation, time-series analysis, and sample design evaluation across government survey domains."
+  },
+  {
+    "role_id": "ROLE_DATA_ANALYST",
+    "role_name": "Data Analyst (Official Statistics)",
+    "department": "Data Processing & Dissemination",
+    "description": "Processes large-scale survey datasets, performs automated data cleaning, generates tabulations, and prepares analytical statistical reports."
+  },
+  {
+    "role_id": "ROLE_SURVEY_OFFICER",
+    "role_name": "Survey Operations Officer",
+    "department": "Survey Logistics & Operations",
+    "description": "Manages survey logistics, field staff deployment, questionnaire design implementation, and data collection monitoring across districts."
+  },
+  {
+    "role_id": "ROLE_RESEARCH_OFFICER",
+    "role_name": "Research Officer (Economics & Statistics)",
+    "department": "Economic Research & National Accounts",
+    "description": "Conducts applied statistical and economic research, national accounts estimation, macroeconomic indicator computation, and policy evaluation."
+  },
+  {
+    "role_id": "ROLE_DATA_SCIENTIST",
+    "role_name": "Data Scientist (GovTech & Analytics)",
+    "department": "Advanced Analytics & Innovation",
+    "description": "Applies machine learning, automated anomaly detection, and predictive analytics to government data streams and administrative registries."
+  },
+  {
+    "role_id": "ROLE_GIS_ANALYST",
+    "role_name": "Spatial & GIS Data Analyst",
+    "department": "Geospatial Statistics & Mapping",
+    "description": "Integrates spatial mapping, GIS boundaries, and remote sensing data with census and statistical sample survey frames."
+  },
+  {
+    "role_id": "ROLE_IT_OFFICER",
+    "role_name": "IT & Technical Officer",
+    "department": "Information Technology & Data Systems",
+    "description": "Oversees database administration, secure data transmission, API integrations, and SDMX metadata standardization across technical platforms."
+  },
+  {
+    "role_id": "ROLE_ADMIN_OFFICER",
+    "role_name": "Administrative & Governance Officer",
+    "department": "Statistical Governance & Compliance",
+    "description": "Ensures regulatory compliance, statistical confidentiality, data governance standards, and institutional record management."
+  },
+  {
+    "role_id": "ROLE_STAT_MANAGER",
+    "role_name": "Statistical Operations Manager",
+    "department": "Executive Management & Capacity Building",
+    "description": "Directs multi-disciplinary statistical projects, capacity development programs, resource allocations, and inter-departmental statistical coordination."
+  }
+]
